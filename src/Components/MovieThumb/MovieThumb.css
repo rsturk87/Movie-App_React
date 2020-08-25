@@ -1,0 +1,13 @@
+.thumb-image {
+    border-radius: 8px;
+}
+
+.thumb-title {
+    text-transform: uppercase;
+    color: #fffbcb;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+}
