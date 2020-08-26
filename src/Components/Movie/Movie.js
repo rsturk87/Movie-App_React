@@ -1,26 +1,24 @@
-import React from 'react';
-import './MovieThumb.css';
-import {Link} from 'react-router-dom';
+import React, {useContext} from 'react';
+import './Movie.css';
+import UserContext from '../../context/userContext.js';
 
-function Movie({title, picture, key}) {
+function Movie() {
     
     return (
-    <div className="movie-thumb">
+    <div className="movie-details">
         {
-            <MovieHeader title={title} picture={picture} key={key} />
+            <MovieHeader />
         }
     </div>
   );
 }
 
-const MovieHeader = ({title, picture, key}) => {
+const MovieHeader = () => {
     
     return (
         <div>
-            <Link to={"/Movie"+"/"+key}>
-            <img src={"https://image.tmdb.org/t/p/w200"+picture} />
-            <span>{title}</span>
-            </Link>
+            <img src={"https://image.tmdb.org/t/p/w200"} />
+            <span>title</span>
         </div>
     )
 }

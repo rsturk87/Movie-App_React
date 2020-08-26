@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './TopRated.css';
 import MovieThumb from '../MovieThumb/MovieThumb';
+import UserContext from '../../context/userContext.js';
 
 function TopRated() {
     const [movies, setMovies] = useState([]);
@@ -24,15 +25,17 @@ function TopRated() {
     )
   
     return (
-    <div className="top-rated">
-        {
-            movies.map(
-                movie => 
-                <MovieThumb title={movie.title} picture={movie.poster_path} key={movie.id} />
-                )
-        }
-    </div>
-  );
+        <UserContext.Provider value={{movies}}>
+        <div className="top-rated">
+            {
+                movies.map(
+                    movie => 
+                    <MovieThumb title={movie.title} picture={movie.poster_path} key={movie.id} overview={movie.overview} backdrop={movie.backdrop_path} />
+                    )
+            }
+        </div>
+        </UserContext.Provider>
+    );
 }
 
 export default TopRated;
