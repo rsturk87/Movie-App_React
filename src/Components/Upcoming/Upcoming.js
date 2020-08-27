@@ -28,7 +28,7 @@ function Upcoming() {
         {
             upcoming.map(
                 movie => 
-                <MovieThumb title={movie.title} picture={movie.poster_path} key={movie.id} />
+                <MovieThumb title={movie.title} picture={movie.poster_path} key={movie.id} id={movie.id} />
                 )
         }
     </div>

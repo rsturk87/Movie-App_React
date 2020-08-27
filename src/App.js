@@ -13,7 +13,7 @@ function App() {
         <HomeHeader />
         <div className="container">
             <Switch>
-            <Route path='/Movie/' component={Movie} />
+            <Route path='/Movie/:id' component={Movie} />
             <Route path='/Upcoming/' component={Upcoming} />
             <Route path='/Popular/' component={Popular} />
             <Route path='/TopRated/' component={TopRated} />
