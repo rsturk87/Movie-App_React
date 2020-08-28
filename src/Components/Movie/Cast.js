@@ -24,17 +24,21 @@ function Cast() {
         <div className="movie__cast">
             {
                 cast &&
-                cast.cast.map( actor =>
-                <CastInfo name={actor.name}
-                character={actor.character}
-                picture={actor.picture} />
-                )
+                <>
+                    {
+                    cast.cast.map( actor =>
+                    <CastInfo name={actor.name}
+                    character={actor.character}
+                    picture={actor.picture} />
+                    )
+                    }
+                </>
             }
         </div>
     );
 }
 
-const CastInfo = (picture, name, character) => {
+const CastInfo = (name, character, picture) => {
     
     return (
         <div className="cast__info">

@@ -28,7 +28,7 @@ function TopRated() {
             {
                 movies.map(
                     movie => 
-                    <MovieThumb title={movie.title} picture={movie.poster_path} key={movie.id} id={movie.id} />
+                    <MovieThumb picture={movie.poster_path} key={movie.id} id={movie.id} />
                 )
             }
         </div>

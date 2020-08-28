@@ -9,14 +9,22 @@ function HomeHeader() {
             {
                 <>
                 <Link to='/TopRated'>
-                    <h3 className="home-link">TopRated</h3>
+                <div className="logo-container">
+                    <h3 className="logo-title">Movie<span className="logo-span">_DB</span></h3>
+                </div>
                 </Link>
-                <Link to='/Upcoming'>
-                    <h3 className="home-link">Upcoming</h3>
-                </Link>
-                <Link to='/Popular'>
-                    <h3 className="home-link">Popular</h3>
-                </Link>
+
+                <div className="menu">
+                    <Link to='/TopRated'>
+                        <h3 className="home-link">Top_Rated</h3>
+                    </Link>
+                    <Link to='/Upcoming'>
+                        <h3 className="home-link">Upcoming</h3>
+                    </Link>
+                    <Link to='/Popular'>
+                        <h3 className="home-link">Popular</h3>
+                    </Link>
+                </div>
                 </>
             }
         </div>

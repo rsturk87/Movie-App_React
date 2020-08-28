@@ -1,13 +1,13 @@
 .thumb-image {
     border-radius: 8px;
+    margin: 5px;
+    margin-bottom: 10px;
+    width: 270px;
+    border: 1px solid var(--color-division);
+    transition: ease-in-out 250ms;
 }
 
-.thumb-title {
-    text-transform: uppercase;
-    color: #fffbcb;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: 500;
+.thumb-image:hover {
+    opacity: .5;
+    transition: ease-in-out 250ms;
 }

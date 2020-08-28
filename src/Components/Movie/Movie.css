@@ -2,6 +2,7 @@
     margin: 0px;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .movie__header {
@@ -15,6 +16,7 @@
     object-fit: cover;
     object-position: 50% 30%;
     opacity: .6;
+    border: 1px solid var(--color-division);
 }
 
 .movie__title {
@@ -25,18 +27,86 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
-    /* -webkit-text-stroke: 3px #fff; */
+    color: var(--color-text-primary);
     text-transform: uppercase;
+    line-height: 60px;
 }
 
 .movie__tagline {
-    font-weight: 500;
-    font-size: 1.5em;
-    color: tomato;
-    margin: 0;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: .5em;
+    text-transform: capitalize;
+    color: var(--color-spotlight);
+    text-shadow: 2px 2px 8px #292929;
+}
+
+.movie__info {
+    margin: auto;
+    padding: 50px 0;
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie__genre {
+    border: 1px solid var(--color-division);
+    padding: 10px;
+    border-radius: 1px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: .8em;
+    font-weight: 400;
+    margin-right: 7px;
+    color: var(--color-spotlight);
+}
+
+.movie__overview {
+    padding: 10px;
+    font-weight: 300;
+    font-size: 1em;
+    margin: 0 20px;
+}
+
+.movie__rating {
+    border: 1px solid var(--color-division);
+    padding: 10px;
+    border-radius: 1px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: .8em;
+    font-weight: 400;
+    margin-right: 7px;
+    color: var(--color-spotlight);
+}
+
+.movie__release {
+    border: 1px solid var(--color-division);
+    padding: 10px;
+    border-radius: 1px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: .8em;
+    font-weight: 400;
+    margin-right: 7px;
+    color: var(--color-spotlight);
+}
+
+@media (max-width: 700px) {
+    .movie__title {
+        font-size: 2em;
+    }
+    
+    .movie__tagline {
+        font-size: .7em;
+    }
+
+    .movie__info {
+        width: 95vw;
+        flex-direction: column;
+    }
 }

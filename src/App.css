@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+    --color-text-primary: #f4f4f5;
+    --color-text-secondary: #c2c2c2;
+    --color-division: #161f29;
+    --color-bg: #0c1016;
+    --color-spotlight: #ef263d;
+}
+
+  
 body {
     margin: 0;
     padding: 0;
@@ -12,7 +21,8 @@ a {
 }
 
 .App {
-    background: #2a2a2c;
+    background: var(--color-bg);
+    color: var(--color-text-primary);
     height: 100vh;
     width: 100vw;
     overflow-y: scroll;

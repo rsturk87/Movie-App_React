@@ -1,0 +1,9 @@
+.movie__trailer {
+    width: 100%;
+    height: 600px;
+    overflow-y: hidden;
+}
+
+ReactPlayer {
+    width: 500px;
+}
