@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import './Cast.css';
 
-function Cast() {
-    const {id} = useParams();
+function Cast({id}) {
     const [cast, setCast] = useState();
   
     const getCast = () => {
@@ -17,7 +16,7 @@ function Cast() {
     }
 
     useEffect(
-        getCast, []
+        getCast, [id]
     )
 
     return (

@@ -30,7 +30,7 @@ function Movie() {
             <>
             <MovieHeader title={movie.title} backdrop={movie.backdrop_path} tagline={movie.tagline} />
             <MovieInfo genres={movie.genres.map(item => item.name)} overview={movie.overview} rating={movie.vote_average} release={movie.release_date} />
-            <Cast />
+            <Cast id={id} />
             <Trailer id={id} />
             <Similar id={id} />
             </>
