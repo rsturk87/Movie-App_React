@@ -9,4 +9,4 @@ A responsive browser app to get information about movies.
 
 ## Build With
 - React
-- The Movie [Database API](https://developers.themoviedb.org/3/getting-started/introduction)
+- [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
