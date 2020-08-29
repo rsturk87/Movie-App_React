@@ -12,7 +12,7 @@ function Cast() {
             res => res.json()
         )
         .then(
-            data => setCast(data)
+            data => setCast(data.cast)
         )
     }
 
@@ -21,32 +21,37 @@ function Cast() {
     )
 
     return (
+        <>
+        <div className="cast__title">
+            Starring
+        </div>
         <div className="movie__cast">
             {
                 cast &&
                 <>
                     {
-                    cast.cast.map( actor =>
+                    cast.slice(0, 8).map( actor =>
                     <CastInfo name={actor.name}
                     character={actor.character}
-                    picture={actor.picture} />
+                    picture={actor.profile_path} />
                     )
                     }
                 </>
             }
         </div>
+        </>
     );
 }
 
-const CastInfo = (name, character, picture) => {
+const CastInfo = ({name, character, picture}) => {
     
     return (
         <div className="cast__info">
             {
                 <>
-                <img src={"https://image.tmdb.org/t/p/w300"+picture} />
-                <h1>{name}</h1>
-                <h3>{character}</h3>
+                <img className="cast__picture" src={"https://image.tmdb.org/t/p/w300"+picture} alt="actor profile" />
+                <h4 className="cast__name">{name}</h4>
+                <h5 className="cast__character">{character}</h5>
                 </>
             }
         </div>

@@ -2,7 +2,7 @@
 
 :root {
     --color-text-primary: #f4f4f5;
-    --color-text-secondary: #c2c2c2;
+    --color-text-secondary: rgb(97, 97, 97);
     --color-division: #161f29;
     --color-bg: #0c1016;
     --color-spotlight: #ef263d;

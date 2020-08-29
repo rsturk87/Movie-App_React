@@ -3,9 +3,8 @@ import {useParams} from 'react-router-dom';
 import ReactPlayer from "react-player"
 import './Trailer.css';
 
-function Trailer() {
-    const {id} = useParams();
-    const [trailer, setTrailer] = useState();
+function Trailer({id}) {
+    const [trailer, setTrailer] = useState([]);
   
     const getTrailer = () => {
         fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=5e1d96520aabad474f481cad9ac5839e&language=en-US`)
@@ -13,28 +12,26 @@ function Trailer() {
             res => res.json()
         )
         .then(
-            data => setTrailer(data)
+            data => setTrailer(data.results)
         )
     }
 
     useEffect(
-        getTrailer, []
+        getTrailer, [id]
     )
 
     return (
     <div className="movie__trailer-container">
         {
-            trailer &&
-            <>
-            <MovieTrailer url={trailer.results[0].key} />
-            </>
+            trailer.length > 0 &&
+            <MovieTrailer url={trailer[0].key} />
         }
     </div>
   );
 }
 
 const MovieTrailer = ({url}) => {
-    const youtuberUrl ="https://www.youtube.com/watch?v="+url;
+    const youtuberUrl = "https://www.youtube.com/watch?v="+url;
 
     return (
         <div className="movie__trailer">

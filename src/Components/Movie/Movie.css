@@ -38,6 +38,7 @@
     text-transform: capitalize;
     color: var(--color-spotlight);
     text-shadow: 2px 2px 8px #292929;
+    line-height: 0px;
 }
 
 .movie__info {

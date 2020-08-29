@@ -4,9 +4,10 @@ import MovieThumb from '../MovieThumb/MovieThumb';
 
 function TopRated() {
     const [movies, setMovies] = useState([]);
+    const [page, setPage] = useState(1);
   
     const getMovies = () => {
-        fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=5e1d96520aabad474f481cad9ac5839e&language=en-US&page=1')
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=5e1d96520aabad474f481cad9ac5839e&language=en-US&page=${page}`)
         .then(
             res => res.json()
         )
@@ -20,18 +21,25 @@ function TopRated() {
     }
 
     useEffect(
-        () => getMovies(), []
+        () => getMovies(), [page]
     )
   
     return (
-        <div className="top-rated">
+        <>
+            <div className="top-rated">
+                {
+                    movies.map(
+                        movie => 
+                        <MovieThumb picture={movie.poster_path} key={movie.id} id={movie.id} />
+                    )
+                }
+            </div>
             {
-                movies.map(
-                    movie => 
-                    <MovieThumb picture={movie.poster_path} key={movie.id} id={movie.id} />
-                )
+            <div className="button">
+                <button className="next-page-button" onClick={() => setPage(page+1)}>More Movies</button>
+            </div>
             }
-        </div>
+        </>
     );
 }
 

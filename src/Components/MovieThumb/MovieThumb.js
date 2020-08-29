@@ -18,7 +18,7 @@ const MovieHeader = ({picture, key, id}) => {
     return (
         <div>
             <Link to={"/Movie/"+id}>
-            <img className="thumb-image" src={"https://image.tmdb.org/t/p/w300"+picture} />
+            <img className="thumb-image" src={"https://image.tmdb.org/t/p/w300"+picture} alt="movie poster" />
             </Link>
         </div>
     )

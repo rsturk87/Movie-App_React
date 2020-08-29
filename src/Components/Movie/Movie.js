@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import Cast from './Cast';
+import Similar from '../Similar/Similar';
 import Trailer from '../Trailer/Trailer';
 import './Movie.css';
 
@@ -19,7 +20,7 @@ function Movie() {
     }
 
     useEffect(
-        getMovie, []
+        getMovie, [id]
     )
 
     return (
@@ -29,8 +30,9 @@ function Movie() {
             <>
             <MovieHeader title={movie.title} backdrop={movie.backdrop_path} tagline={movie.tagline} />
             <MovieInfo genres={movie.genres.map(item => item.name)} overview={movie.overview} rating={movie.vote_average} release={movie.release_date} />
-            {/* <Cast /> */}
-            <Trailer />
+            <Cast />
+            <Trailer id={id} />
+            <Similar id={id} />
             </>
         }
     </div>
@@ -41,9 +43,8 @@ const MovieHeader = ({title, backdrop, tagline}) => {
     
     return (
         <div className="movie__header">
-            <img className="movie__backdrop" src={"https://image.tmdb.org/t/p/original"+backdrop} />
+            <img className="movie__backdrop" src={"https://image.tmdb.org/t/p/original"+backdrop} alt="movie scene" />
             <h1 className="movie__title">{title}<br/><span className="movie__tagline">{tagline}</span></h1>
-            {/* <h3 className="movie__tagline">{tagline}</h3> */}
         </div>
     )
 }
